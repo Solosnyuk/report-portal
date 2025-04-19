@@ -1,36 +1,23 @@
 package task.reportPortal;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.devtools.DevTools;
-import org.openqa.selenium.devtools.v131.security.Security;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.util.List;
-import java.util.Map;
-
-public class newWidgetTaskTest {
+public class newWidgetTaskTest extends BaseTest {
     @Test
     public void NewWidgetTaskProgressTest() {
+        String nameDashboard = generateName();
+        String nameWidget = generateName();
 
-        WebDriver driver = new ChromeDriver();
+        LaunchesPage launchesPage = new LaunchesPage(getDriver());
+        DashboardsPage dashboardsPage = new DashboardsPage(getDriver());
+        LoginPage loginPage = new LoginPage(getDriver());
 
-        driver.get("https://demo.reportportal.io/");
+        loginPage.login("default", "1q2w3e");
+        launchesPage.goDashboards();
+        dashboardsPage.addNewDashboard(nameDashboard, "Test board");
+        dashboardsPage.addNewWidget(nameWidget, "Max");
 
-        driver.findElement(By.xpath("//button[@type='submit']")).click();
-
-        driver.findElement(By.xpath("//span[contains@class, 'sidebarButton__wrapper')]")).click();
-        driver.findElement(By.xpath("//div[contains" +
-                "(@class, 'dashboardPageHeader__dashboard-page-header')] ")).click();
-        WebElement nameNewWidget = driver.findElement(By.xpath("//input[type=\"text\"]"));
-        nameNewWidget.sendKeys("NewBoard");
-        //driver.findElement(By.xpath("//div[@class=\"gridRow__grid-row-wrapper--xj8DG\"]")).click();
+        Assert.assertEquals(dashboardsPage.getNameWidget(), nameWidget);
     }
 }
