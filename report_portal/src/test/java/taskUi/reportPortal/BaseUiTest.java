@@ -1,4 +1,4 @@
-package task.reportPortal;
+package taskUi.reportPortal;
 
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
@@ -9,7 +9,7 @@ import org.testng.annotations.BeforeMethod;
 import java.util.Random;
 
 
-public class BaseTest {
+public class BaseUiTest {
 
     private WebDriver driver;
 

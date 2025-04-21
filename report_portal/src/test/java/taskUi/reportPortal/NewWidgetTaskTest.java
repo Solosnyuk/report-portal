@@ -1,9 +1,9 @@
-package task.reportPortal;
+package taskUi.reportPortal;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class newWidgetTaskTest extends BaseTest {
+public class NewWidgetTaskTest extends BaseUiTest {
     @Test
     public void NewWidgetTaskProgressTest() {
         String nameDashboard = generateName();
