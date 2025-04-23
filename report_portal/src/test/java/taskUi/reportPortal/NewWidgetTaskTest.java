@@ -1,13 +1,11 @@
 package taskUi.reportPortal;
 
-import io.qameta.allure.Epic;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class NewWidgetTaskTest extends BaseUiTest {
-    @Epic("Создание виджета")
     @Test
-    public void NewWidgetTaskProgressTest() {
+    public void newWidgetTaskProgressTest() {
         String nameDashboard = generateName();
         String nameWidget = generateName();
 

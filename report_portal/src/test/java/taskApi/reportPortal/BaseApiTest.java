@@ -1,5 +1,6 @@
 package taskApi.reportPortal;
 
+import io.qameta.allure.Step;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -10,21 +11,13 @@ public class BaseApiTest {
     public static final Logger logger = Logger.getLogger(BaseApiTest.class.getName());
     public static final String BASE_URL = "https://demo.reportportal.io/api/v1/";
     public static final String BASE_API = "/dashboard/";
-    public static final String ACCESS_TOKEN = "skey_tx53r9UaSn6Wsebjr3bAuXf-algK-pvlT28xVI63Zq51-3UlZ3fI293c-S-gNl83";
+    public static final String ACCESS_TOKEN = "fedor_jOID1LdjRX-TihsCsEu6Pom3dA_F9kJGPQ8VGLR_NuN_Rw6lJa8eymm_WNk2eEDO";
     public static final String PROJECT_NAME = "default_personal";
 
     public String getRandomName() {
 
         String RandomName = "Bob_" + System.currentTimeMillis();
         return  RandomName;
-    }
-
-    public String longName() {
-        String name = "";
-        for(int i = 0; i < 129; i++) {
-            name += (char)(Math.random() * 26 + 97);
-        }
-        return name;
     }
 
     @BeforeClass
