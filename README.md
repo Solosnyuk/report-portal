@@ -14,29 +14,29 @@ API тесты: Rest Assured.
 
  ##### UI
 ###### BasePage:
-* getWait10()-метод для ожидания элементов в течение 10 секунд
+* getWait10() - метод для ожидания элементов в течение 10 секунд
 		
 ###### DashboardsPage: 
-* addNewDashboard(String name, String description)-добавляет новый Dashboard
+* addNewDashboard(String name, String description) - добавляет новый Dashboard
 
-* addNewWidget(String nameFilter, String nameLaunchFilter)-добавляет новый виджет
+* addNewWidget(String nameFilter, String nameLaunchFilter) - добавляет новый виджет
 
-* getNameWidget()-возвращает имя добавленного виджета
+* getNameWidget() - возвращает имя добавленного виджета
 
 
  ##### API
  ###### BaseApiTest:
- * sendPostRequest(String body)-отправляет POST запрос
- * sendGetRequest(Integer id)-отправляет GET запрос
+ * sendPostRequest(String body) - отправляет POST запрос
+ * sendGetRequest(Integer id) - отправляет GET запрос
 
  
 ###### NegativeDashboardTests
-* negativeTest()-проверяет запрос с длинным именим
+* negativeTest() - проверяет запрос с длинным именим
 	
 ###### PositiveDashboardTests
-* successPostTest()-создаёт новый Dashboard через API
+* successPostTest() - создаёт новый Dashboard через API
 
-* verifyDashboardTest()-проверяет корректность данных созданного Dashboard
+* verifyDashboardTest() - проверяет корректность данных созданного Dashboard
 ***		
 ### Примечание:
 Убедитесь что Firefox установлен.
