@@ -36,7 +36,7 @@ public class BaseUiTest {
         Random random = new Random();
         return String.format("%c%c%c",
                 'A' + random.nextInt(26),
-                'A' + random.nextInt(26),
-                'A' + random.nextInt(26));
+                'a' + random.nextInt(26),
+                'a' + random.nextInt(26));
     }
 }
