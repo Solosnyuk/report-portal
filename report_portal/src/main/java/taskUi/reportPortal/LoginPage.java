@@ -31,9 +31,11 @@ public class LoginPage extends BasePage {
         getWait10().until(ExpectedConditions.visibilityOfElementLocated(signInButton)).click();
     }
 
-    public void login(String nickname, String password) {
+    public LaunchesPage login(String nickname, String password) {
         setNickname(nickname);
         setPassword(password);
         clickSetSignInButton();
+
+        return new LaunchesPage(getDriver());
     }
 }

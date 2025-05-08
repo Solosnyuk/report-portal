@@ -31,21 +31,23 @@ public class DashboardsPage extends BasePage {
     private final By addedWidget = By.className("widgetHeader__widget-name-block--AOAHS");
 
 
-    public void openConfigNewDashboard() {
-
+    public DashboardsPage openConfigNewDashboard() {
         WebElement waitBuuttonNewDashboard = getWait10().until(ExpectedConditions.elementToBeClickable(buttonNewDashboard));
         new Actions(getDriver())
                 .moveToElement(waitBuuttonNewDashboard)
                 .pause(Duration.ofMillis(600))
                 .click(waitBuuttonNewDashboard)
                 .perform();
+
+        return this;
     }
 
-    public void setName(String name) {
-
+    public DashboardsPage setName(String name) {
         WebElement waitNameNewDashboard = getWait10().until(ExpectedConditions.visibilityOfElementLocated(nameNewDashboard));
         waitNameNewDashboard.clear();
         waitNameNewDashboard.sendKeys(name);
+
+    return this;
     }
 
     public void setDescription(String description) {
@@ -120,14 +122,16 @@ public class DashboardsPage extends BasePage {
         getWait10().until(ExpectedConditions.visibilityOfElementLocated(addSaveWidget)).click();
     }
 
-    public void addNewDashboard(String name, String description) {
+    public DashboardsPage addNewDashboard(String name, String description) {
         openConfigNewDashboard();
         setName(name);
         setDescription(description);
         clickAddButton();
+
+    return this;
     }
 
-    public void addNewWidget(String nameFilter, String nameLaunchFilter) {
+    public DashboardsPage addNewWidget(String nameFilter, String nameLaunchFilter) {
         clickAddNewWidgetButton();
         clickLauchStatistikTypeItem();
         clickNextStepButtonSelectWidget();
@@ -139,6 +143,8 @@ public class DashboardsPage extends BasePage {
 
         clickNextStepButtonConfigureWidget();
         clickAddSaveWidget();
+
+        return this;
     }
 
     public String getNameWidget() {
