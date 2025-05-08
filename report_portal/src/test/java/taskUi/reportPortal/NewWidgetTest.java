@@ -3,7 +3,7 @@ package taskUi.reportPortal;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class NewWidgetTaskTest extends BaseUiTest 
+public class NewWidgetTest extends BaseUiTest {
 
     @Test
     public void testNewWidgetCreation() {
