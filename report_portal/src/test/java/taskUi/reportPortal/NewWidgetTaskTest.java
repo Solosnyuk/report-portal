@@ -1,10 +1,9 @@
 package taskUi.reportPortal;
 
-import io.qameta.allure.Epic;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class NewWidgetTaskTest extends BaseUiTest {
+public class NewWidgetTaskTest extends BaseUiTest 
 
     @Test
     public void testNewWidgetCreation() {

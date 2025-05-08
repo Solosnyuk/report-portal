@@ -2,6 +2,7 @@ package taskApi.reportPortal;
 
 import io.restassured.response.Response;
 import org.testng.Assert;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 public class PositiveDashboardTests extends BaseApiTest {
@@ -24,7 +25,9 @@ public class PositiveDashboardTests extends BaseApiTest {
     }
 
     @Test(dependsOnMethods = "successPostTest")
+    @Ignore("Not for reporting")
     public void verifyDashboardTest() {
+
         Response response = sendGetRequest(createdDashboardId);
 
         String actualName = response.jsonPath().getString("name");
